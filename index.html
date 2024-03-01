@@ -16,11 +16,11 @@
 		<div class="header">
 			<div class="container">
 				<h1>IP Address Tracker</h1>
-				<form action="">
+				<form id="search-form">
 					<input
 						type="text"
-						name="ip-address"
-						id="ip-address"
+						name="search-input"
+						id="search-input"
 						placeholder="Search for any IP address or domain"
 					/>
 					<button type="submit">
@@ -30,23 +30,24 @@
 				<div class="results">
 					<div class="result">
 						<div class="result-label">IP Address</div>
-						<div class="result-value" id="ip-address">192.212..174.101</div>
+						<div class="result-value" id="ip"></div>
 					</div>
 					<div class="result">
 						<div class="result-label">Location</div>
-						<div class="result-value" id="location">Brooklyn, NY 10001</div>
+						<div class="result-value" id="location"></div>
 					</div>
 					<div class="result">
 						<div class="result-label">Timezone</div>
-						<div class="result-value" id="timezone">192.212..174.101</div>
+						<div class="result-value" id="timezone"></div>
 					</div>
 					<div class="result">
 						<div class="result-label">ISP</div>
-						<div class="result-value" id="isp">192.212..174.101</div>
+						<div class="result-value" id="isp"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="map"></div>
+		<script src="script.js"></script>
 	</body>
 </html>
