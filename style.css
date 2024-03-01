@@ -49,6 +49,7 @@ img {
 :root {
 	--dark-gray: hsl(0, 0%, 17%);
 	--gray: hsl(0, 0%, 59%);
+	--light-gray: #d8d8d8;
 }
 
 /*--------------------------------------------------------------
@@ -68,6 +69,12 @@ h1 {
 	margin-bottom: 2rem;
 }
 
+@media (min-width: 1024px) {
+	h1 {
+		font-size: 2.25rem;
+	}
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -75,12 +82,22 @@ h1 {
 .header {
 	height: 300px;
 	padding-top: 2rem;
-	background: url('./images/pattern-bg-mobile.png');
+	background: url('./images/pattern-bg-mobile.png') no-repeat center;
 	background-size: cover;
 }
 
 .container {
 	padding: 0 1.5rem;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+	.header {
+		height: 275px;
+		background: url('./images/pattern-bg-desktop.png') no-repeat center;
+		background-size: cover;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -98,7 +115,7 @@ form {
 
 input {
 	flex: 1;
-	padding: 10px;
+	padding: 0 1.5rem;
 	height: 60px;
 	box-sizing: border-box;
 	margin: 0;
@@ -137,13 +154,15 @@ button img {
 # Results
 --------------------------------------------------------------*/
 .results {
-	padding: 1.5rem;
+	padding: 1.5rem 0;
 	background: white;
 	border-radius: 15px;
 	text-align: center;
+	position: relative;
 }
 
 .result {
+	padding: 0 1.5rem;
 	margin-bottom: 1.75rem;
 }
 
@@ -152,7 +171,6 @@ button img {
 }
 
 .result-label {
-	text-align: center;
 	color: var(--gray);
 	text-transform: uppercase;
 	font-weight: 700;
@@ -164,4 +182,52 @@ button img {
 .result-value {
 	font-size: 1rem;
 	font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+	.results {
+		text-align: left;
+		padding: 2.5rem 2rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	.result {
+		padding: 0 2rem;
+		margin-bottom: 0;
+		position: relative;
+	}
+
+	.result:after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 4px;
+		width: 1px;
+		height: calc(100% - 8px);
+		background-color: var(--light-gray);
+	}
+
+	.result:last-child:after {
+		content: none;
+	}
+
+	.result-value {
+		font-size: 1.5rem;
+	}
+}
+
+/*--------------------------------------------------------------
+# Map
+--------------------------------------------------------------*/
+.map {
+	height: calc(100vh - 300px);
+	min-height: 530px;
+	background: #f5f5f5;
+}
+
+@media (min-width: 1024px) {
+	.map {
+		height: calc(100vh - 275px);
+	}
 }
