@@ -13,7 +13,7 @@ The IP Address Tracker allows users to track information about an IP address or 
 
 ## Demo
 
-You can see a live demo of the project [here](https:iptracker.jon-funk.com).
+You can see a live demo of the project [here](https://iptracker.jon-funk.com).
 
 ## Technologies Used
 
@@ -24,7 +24,7 @@ You can see a live demo of the project [here](https:iptracker.jon-funk.com).
 
 ## Setup
 
-1. Clone the repository: `git clone https://github.com/your-username/ip-address-tracker.git`
+1. Clone the repository: `git clone https://github.com/jonathanfunk/ip-address-tracker.git`
 2. Open `index.html` in your preferred browser.
 
 ## API Key
