@@ -119,9 +119,13 @@ input {
 	height: 60px;
 	box-sizing: border-box;
 	margin: 0;
-	border: none;
+	border: 1px solid white;
 	appearance: none;
 	border-radius: 15px 0 0 15px;
+}
+
+input:focus {
+	border-color: var(--dark-gray);
 }
 
 input:focus {
@@ -136,13 +140,18 @@ button {
 	background-color: var(--dark-gray);
 	width: 60px;
 	height: 60px; /* Adjust the height as needed */
-	border: none;
+	border: 1px solid var(--dark-gray);
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 0;
 	border-radius: 0 15px 15px 0;
+	transition: opacity 0.3s ease;
+}
+
+button:hover {
+	opacity: 0.9;
 }
 
 button img {
@@ -159,6 +168,9 @@ button img {
 	border-radius: 15px;
 	text-align: center;
 	position: relative;
+	box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+		0 8px 10px -6px rgb(0 0 0 / 0.1);
+	z-index: 999;
 }
 
 .result {
@@ -220,14 +232,14 @@ button img {
 /*--------------------------------------------------------------
 # Map
 --------------------------------------------------------------*/
-.map {
+#map {
 	height: calc(100vh - 300px);
 	min-height: 530px;
 	background: #f5f5f5;
 }
 
 @media (min-width: 1024px) {
-	.map {
+	#map {
 		height: calc(100vh - 275px);
 	}
 }
