@@ -6,9 +6,9 @@ const formEl = document.getElementById('search-form');
 let map;
 
 async function fetchLocationData(params) {
-	console.log(params);
 	const API_KEY = 'at_Eeh3bF7YLVsaMVy3jVacaOLBNr5Ph';
 	const API_URL = 'https://geo.ipify.org/api/v2/country,city';
+
 	try {
 		const response = await fetch(`${API_URL}?apiKey=${API_KEY}${params ?? ''}`);
 		const data = await response.json();
@@ -34,11 +34,13 @@ function initMap(lat, lng) {
 	});
 	if (!map) {
 		map = L.map('map', { zoomControl: false }).setView([lat, lng], 13);
-		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			maxZoom: 19,
-			attribution:
-				'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-		}).addTo(map);
+		L.tileLayer(
+			'https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png',
+			{
+				maxZoom: 19,
+				attribution: '&copy; <a href="https://carto.com/">CartoDB</a>',
+			}
+		).addTo(map);
 	} else {
 		map.setView([lat, lng], 13);
 	}
